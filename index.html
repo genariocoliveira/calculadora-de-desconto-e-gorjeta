@@ -1,0 +1,100 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.42.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+    <main class="flex justify-center items-center">
+        <div class="flex flex-col justify-center items-center">
+            <div class="title mb-5 w-[70px] h-[60px]">
+                <h1>splitter</h1>
+            </div>
+            <div class="flex bg-[#fff] md:w-[800px] w-[375px] flex flex-col md:flex-row p-7 rounded">
+
+                <div class="flex-1 p">
+                    <div class="flex flex-col md:px-3">
+                        <label for="valor-pr" class="text-[1.2rem] font-bold">
+                            Bill
+                        </label>
+                        <div class="valor-pr w-[100%] mb-5 flex justify-between bg-[#f4fafa] rounded">
+                            <p class="pl-3">$</p>
+                            <input type="text" class="input-valor-pr text-end" id="valor-principal" placeholder="0">
+                        </div>
+                        <div>
+                            <p class="text-[1rem] font-semibold">Select Tip %</p>
+                            <div class="mb-10 flex flex-wrap">
+                                <input type="button" value="5 %" onclick="calcular('valor', 5)"
+                                    class="bg-[#00494d] active:bg-[#26c0ab] mr-2 mb-2 text-[#fff] h-[3rem] w-[48%] hover:bg-[#9fe8df] hover:text-[#00494d] duration-300 rounded">
+                                <input type="button" value="10 %" onclick="calcular('valor', 10)" id="tenPercent"
+                                    class="bg-[#00494d] mb-2 text-[#fff] h-[3rem] w-[48%] hover:bg-[#9fe8df] hover:text-[#00494d] duration-300 rounded">
+                                <input type="button" value="15 %" onclick="calcular('valor', 15)"
+                                    class="bg-[#00494d] mr-2 mb-2 text-[#fff] h-[3rem] w-[48%] hover:bg-[#9fe8df] hover:text-[#00494d] duration-300 rounded">
+                                <input type="button" value="25 %" onclick="calcular('valor', 25)"
+                                    class="bg-[#00494d] mb-2 text-[#fff] h-[3rem] w-[48%] hover:bg-[#9fe8df] hover:text-[#00494d] duration-300 rounded">
+                                <input type="button" value="50 %" onclick="calcular('valor', 50)"
+                                    class="bg-[#00494d] mr-2 mb-2 text-[#fff] h-[3rem] w-[48%] hover:bg-[#9fe8df] hover:text-[#00494d] duration-300 rounded">
+                                <input type="text" placeholder="custom" onkeyup="calcular('valor', '')"
+                               id="custom"     class="bg-[#f4fafa] pr-5 text-[#00494d] text-end mb-2 text-[#fff] h-[3rem] w-[48%] outline-none border-[2px] border-[#f4fafa] hover:border-[#26c0ab] rounded">
+                            </div>
+                            <div class="mb-10 md:mb-2">
+                                <label for="n-people">
+                                    <p class="text-[1rem] font-semibold">Number of people</p>
+                                </label>
+                                <div
+                                    class="flex justify-between rounded border-[2px] border-[#f4fafa] hover:border-[#26c0ab] items-center bg-[#f4fafa]">
+                                    <ion-icon name="person" class="pl-3"></ion-icon>
+                                    <input type="text" id="n-people" placeholder="0"
+                                        class="w-[80%] outline-none bg-transparent pr-5 text-end text-[#00494d]">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative flex-1 bg-[#00494d] py-10 px-7 rounded text-[#fff]">
+                    <div class="flex justify-between mb-10">
+                        <div>
+                            <h3 class="text-[1.2rem] font-semibold">Tip Amount</h3>
+                            <p class="text-[1rem] text-[#7f9c9f] font-semibold">/ person</p>
+                        </div>
+                        <div>
+                            <h1 class="text-[2rem] font-semibold text-[#26c0ab]">$<span id="valorGorjeta">4.27</span>
+                            </h1>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between">
+                        <div>
+                            <h3 class="text-[1.2rem] font-semibold">Total</h3>
+                            <p class="text-[1rem] text-[#7f9c9f] font-semibold">/ person</p>
+                        </div>
+                        <div>
+                            <h1 class="text-[2rem] font-semibold text-[#26c0ab]">$<span id="valorTotal">32.79</span>
+                            </h1>
+                        </div>
+                    </div>
+                    <button id="btn-reset" class="md:absolute bottom-12 left-[5%] md:w-[90%] uppercase mt-10 rounded bg-[#26c0ab] hover:bg-[#9fe8df] duration-300 text-[#00494d] active:scale-x-90 w-[100%]">reset</button>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+
+    <script src="js/main.js" pefer></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
