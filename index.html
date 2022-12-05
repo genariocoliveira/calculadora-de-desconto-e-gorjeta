@@ -1,3 +1,4 @@
+<!doctype html>
 <html>
 
 <head>
@@ -9,9 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.42.1/dist/full.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-
 </head>
 
 <body>
@@ -22,39 +20,39 @@
             </div>
             <div class="flex bg-[#fff] md:w-[800px] w-[375px] flex flex-col md:flex-row p-7 rounded">
 
-                <div class="flex-1 p">
+                <div class="flex-1">
                     <div class="flex flex-col md:px-3">
-                        <label for="valor-pr" class="text-[1.2rem] font-bold">
-                            Bill
-                        </label>
-                        <div class="valor-pr w-[100%] mb-5 flex justify-between bg-[#f4fafa] rounded">
+                        <div class="relative">
+                            <label for="valor-pr" class="text-[1.2rem] font-bold">
+                                Bill
+                            </label>
+                            <span id="alert-value" class="alerta-principal text-[.6rem] font-bold absolute bottom-1 right-1">Insira o valor</span>
+                        </div>
+
+                        <div id="borda-valor-principal" class="valor-pr w-[100%] mb-5 flex justify-between border-[2px] border-[#f0f0f0] hover:border-[#26c0ab] duration-300 bg-[#f0f0f0] rounded">
                             <p class="pl-3">$</p>
                             <input type="text" class="input-valor-pr text-end" id="valor-principal" placeholder="0">
                         </div>
                         <div>
                             <p class="text-[1rem] font-semibold">Select Tip %</p>
                             <div class="mb-10 flex flex-wrap">
-                                <input type="button" value="5 %" onclick="calcular('valor', 5)"
-                                    class="bg-[#00494d] active:bg-[#26c0ab] mr-2 mb-2 text-[#fff] h-[3rem] w-[48%] hover:bg-[#9fe8df] hover:text-[#00494d] duration-300 rounded">
-                                <input type="button" value="10 %" onclick="calcular('valor', 10)" id="tenPercent"
-                                    class="bg-[#00494d] mb-2 text-[#fff] h-[3rem] w-[48%] hover:bg-[#9fe8df] hover:text-[#00494d] duration-300 rounded">
-                                <input type="button" value="15 %" onclick="calcular('valor', 15)"
-                                    class="bg-[#00494d] mr-2 mb-2 text-[#fff] h-[3rem] w-[48%] hover:bg-[#9fe8df] hover:text-[#00494d] duration-300 rounded">
-                                <input type="button" value="25 %" onclick="calcular('valor', 25)"
-                                    class="bg-[#00494d] mb-2 text-[#fff] h-[3rem] w-[48%] hover:bg-[#9fe8df] hover:text-[#00494d] duration-300 rounded">
-                                <input type="button" value="50 %" onclick="calcular('valor', 50)"
-                                    class="bg-[#00494d] mr-2 mb-2 text-[#fff] h-[3rem] w-[48%] hover:bg-[#9fe8df] hover:text-[#00494d] duration-300 rounded">
-                                <input type="text" placeholder="custom" onkeyup="calcular('valor', '')"
-                               id="custom"     class="bg-[#f4fafa] pr-5 text-[#00494d] text-end mb-2 text-[#fff] h-[3rem] w-[48%] outline-none border-[2px] border-[#f4fafa] hover:border-[#26c0ab] rounded">
+
+                                <input type="button" value="5 %" onclick="calcular('valor', 5)" class="bg-[#00494d] active:bg-[#26c0ab] mr-2 mb-2 text-[#fff] h-[3rem] w-[48%] hover:bg-[#9fe8df] hover:text-[#00494d] duration-300 rounded">
+
+                                <input type="button" value="10 %" onclick="calcular('valor', 10)" class="bg-[#00494d] mb-2 text-[#fff] h-[3rem] w-[48%] hover:bg-[#9fe8df] hover:text-[#00494d] duration-300 rounded">
+                                <input type="button" value="15 %" onclick="calcular('valor', 15)" class="bg-[#00494d] mr-2 mb-2 text-[#fff] h-[3rem] w-[48%] hover:bg-[#9fe8df] hover:text-[#00494d] duration-300 rounded">
+                                <input type="button" value="25 %" onclick="calcular('valor', 25)" class="bg-[#00494d] mb-2 text-[#fff] h-[3rem] w-[48%] hover:bg-[#9fe8df] hover:text-[#00494d] duration-300 rounded">
+                                <input type="button" value="50 %" onclick="calcular('valor', 50)" class="bg-[#00494d] mr-2 mb-2 text-[#fff] h-[3rem] w-[48%] hover:bg-[#9fe8df] hover:text-[#00494d] duration-300 rounded">
+                                <input type="text" placeholder="custom" onkeyup="calcular('valor', '')" id="custom" class="bg-[#f0f0f0] pr-5 text-[#00494d] text-end mb-2 text-[#fff] h-[3rem] w-[48%] outline-none border-[2px] border-[#f0f0f0] hover:border-[#26c0ab] rounded duration-300">
                             </div>
                             <div class="mb-10 md:mb-2">
                                 <label for="n-people">
                                     <p class="text-[1rem] font-semibold">Number of people</p>
                                 </label>
                                 <div
-                                    class="flex justify-between rounded border-[2px] border-[#f4fafa] hover:border-[#26c0ab] items-center bg-[#f4fafa]">
+                                    class="flex justify-between rounded border-[2px] border-[#f0f0f0] hover:border-[#26c0ab] items-center bg-[#f0f0f0] duration-300">
                                     <ion-icon name="person" class="pl-3"></ion-icon>
-                                    <input type="text" id="n-people" placeholder="0"
+                                    <input type="text" id="n-people" value="1" placeholder="0"
                                         class="w-[80%] outline-none bg-transparent pr-5 text-end text-[#00494d]">
                                 </div>
                             </div>
@@ -84,7 +82,8 @@
                             </h1>
                         </div>
                     </div>
-                    <button id="btn-reset" class="md:absolute bottom-12 left-[5%] md:w-[90%] uppercase mt-10 rounded bg-[#26c0ab] hover:bg-[#9fe8df] duration-300 text-[#00494d] active:scale-x-90 w-[100%]">reset</button>
+                    <button id="btn-reset"
+                        class="md:absolute bottom-12 left-[5%] md:w-[90%] uppercase mt-10 rounded bg-[#26c0ab] hover:bg-[#9fe8df] duration-300 text-[#00494d] active:scale-x-90 w-[100%]">reset</button>
                 </div>
 
             </div>
