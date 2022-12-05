@@ -5,9 +5,9 @@ const numberPerson = document.getElementById('n-people').value
 
 
 btnReset.addEventListener('click', () => {
-  valorPrincipal.innerText = '0'
-  valorGorjeta.innerHTML = '0'
-  valorTotal.innerHTML = '0'
+  valorPrincipal.innerHTML = ''
+  valorGorjeta.innerHTML = ''
+  valorTotal.innerHTML = ''
 })
 
 function calcular(tipo, valor) {
