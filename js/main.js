@@ -23,54 +23,55 @@ function calcular(tipo, valor) {
     alertaPrincipal.classList.add('info-ativ')
     borP.classList.add('input-ativ')
   } else if (valor === 5) {
-    resFivePercent = (valorPrincipal / 100) * 5
+    resFivePercent = ((valorPrincipal / 100) * 5).toFixed(2)
     total = valorPrincipal - resFivePercent
     
     alertaPrincipal.classList.remove('info-ativ')
     borP.classList.remove('input-ativ')
-    valueAmount.innerHTML = ((total / 100) * 5).toFixed(2)
+
+    valueAmount.innerHTML = resFivePercent
     valueTotal.innerHTML = (total / numberPerson).toFixed(2)
   }
   else if (valor === 10) {
-    resFivePercent = (valorPrincipal / 100) * 10
+    resFivePercent = ((valorPrincipal / 100) * 10).toFixed(2)
     total = valorPrincipal - resFivePercent
     
     alertaPrincipal.classList.remove('info-ativ')
     borP.classList.remove('input-ativ')
-    valueAmount.innerHTML = ((total / 100) * 5).toFixed(2)
+    valueAmount.innerHTML = resFivePercent
     valueTotal.innerHTML = (total / numberPerson).toFixed(2)
   }
   else if (valor === 15) {
-    resFivePercent = (valorPrincipal / 100) * 15
+    resFivePercent = ((valorPrincipal / 100) * 15).toFixed(2)
     total = valorPrincipal - resFivePercent
     alertaPrincipal.classList.remove('info-ativ')
     borP.classList.remove('input-ativ')
-    valueAmount.innerHTML = ((total / 100) * 5).toFixed(2)
+    valueAmount.innerHTML = resFivePercent
     valueTotal.innerHTML = (total / numberPerson).toFixed(2)
   }
   else if (valor === 25) {
-    resFivePercent = (valorPrincipal / 100) * 25
+    resFivePercent = ((valorPrincipal / 100) * 25).toFixed(2)
     total = valorPrincipal - resFivePercent
     alertaPrincipal.classList.remove('info-ativ')
     borP.classList.remove('input-ativ')
-    valueAmount.innerHTML = ((total / 100) * 5).toFixed(2)
+    valueAmount.innerHTML = resFivePercent
     valueTotal.innerHTML = (total / numberPerson).toFixed(2)
   }
   else if (valor === 50) {
-    resFivePercent = (valorPrincipal / 100) * 50
+    resFivePercent = ((valorPrincipal / 100) * 50).toFixed(2)
     total = valorPrincipal - resFivePercent
     alertaPrincipal.classList.remove('info-ativ')
     borP.classList.remove('input-ativ')
-    valueAmount.innerHTML = ((total / 100) * 5).toFixed(2)
+    valueAmount.innerHTML = resFivePercent
     valueTotal.innerHTML = (total / numberPerson).toFixed(2)
   }
   else if (valor === '') {
     const custom = document.getElementById('custom').value
-    resFivePercent = (valorPrincipal / 100) * custom
+    resFivePercent = ((valorPrincipal / 100) * custom).toFixed(2)
     total = valorPrincipal - resFivePercent
     alertaPrincipal.classList.remove('info-ativ')
     borP.classList.remove('input-ativ')
-    valueAmount.innerHTML = ((total / 100) * 5).toFixed(2)
+    valueAmount.innerHTML = resFivePercent
     valueTotal.innerHTML = (total / numberPerson).toFixed(2)
   }
 }

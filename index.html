@@ -24,7 +24,7 @@
                     <div class="flex flex-col md:px-3">
                         <div class="relative">
                             <label for="valor-pr" class="text-[1.2rem] font-bold">
-                                Bill
+                                Conta
                             </label>
                             <span id="alert-value" class="alerta-principal text-[.6rem] font-bold absolute bottom-1 right-1">Insira o valor</span>
                         </div>
@@ -34,7 +34,7 @@
                             <input type="number" class="input-valor-pr text-end" id="valor-principal" placeholder="0">
                         </div>
                         <div>
-                            <p class="text-[1rem] font-semibold">Select Tip %</p>
+                            <p class="text-[1rem] font-semibold">Selecione o desconto %</p>
                             <div class="mb-10 flex flex-wrap">
 
                                 <input type="button" value="5 %" onclick="calcular('valor', 5)" class="bg-[#00494d] active:bg-[#26c0ab] mr-2 mb-2 text-[#fff] h-[3rem] w-[48%] hover:bg-[#9fe8df] hover:text-[#00494d] duration-300 rounded">
@@ -47,7 +47,7 @@
                             </div>
                             <div class="mb-10 md:mb-2">
                                 <label for="n-people">
-                                    <p class="text-[1rem] font-semibold">Number of people</p>
+                                    <p class="text-[1rem] font-semibold">Número de pessoas</p>
                                 </label>
                                 <div
                                     class="flex justify-between rounded border-[2px] border-[#f0f0f0] hover:border-[#26c0ab] items-center bg-[#f0f0f0] duration-300">
@@ -63,11 +63,11 @@
                 <div class="relative flex-1 bg-[#00494d] py-10 px-7 rounded text-[#fff]">
                     <div class="flex justify-between mb-10">
                         <div>
-                            <h3 class="text-[1.2rem] font-semibold">Tip Amount</h3>
-                            <p class="text-[1rem] text-[#7f9c9f] font-semibold">/ person</p>
+                            <h3 class="text-[1.2rem] font-semibold">Desconto</h3>
+                            <p class="text-[1rem] text-[#7f9c9f] font-semibold">/ porcentagem</p>
                         </div>
                         <div>
-                            <h1 class="text-[2rem] font-semibold text-[#26c0ab]">$<span id="valorGorjeta">0.00</span>
+                            <h1 class="text-[2rem] font-semibold text-[#26c0ab]">R$<span id="valorGorjeta">0.00</span>
                             </h1>
                         </div>
                     </div>
@@ -75,10 +75,10 @@
                     <div class="flex justify-between">
                         <div>
                             <h3 class="text-[1.2rem] font-semibold">Total</h3>
-                            <p class="text-[1rem] text-[#7f9c9f] font-semibold">/ person</p>
+                            <p class="text-[1rem] text-[#7f9c9f] font-semibold">/ pessoa</p>
                         </div>
                         <div>
-                            <h1 class="text-[2rem] font-semibold text-[#26c0ab]">$<span id="valorTotal">0.00</span>
+                            <h1 class="text-[2rem] font-semibold text-[#26c0ab]">R$<span id="valorTotal">0.00</span>
                             </h1>
                         </div>
                     </div>
